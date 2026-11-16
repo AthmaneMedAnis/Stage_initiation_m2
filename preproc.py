@@ -1,8 +1,8 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
+import pandas as pd
 import re
+import seaborn as sns
 import string
 
 class PARHAFPreprocessor:
@@ -42,7 +42,6 @@ class PARHAFPreprocessor:
         suffix = "_" + df_temp["_suffix"].astype(str)
         
         df_temp.loc[mask, "id"] = df_temp.loc[mask, "id"].astype(str) + suffix 
-        df_temp.loc[mask, "local_id"] = df_temp.loc[mask, "local_id"].astype(str) + suffix 
         
         df_temp = df_temp.drop(columns="_suffix")
         
@@ -98,7 +97,7 @@ class PARHAFPreprocessor:
         
         nb_mentions = df_temp['mention_tabac'].sum()
         total = len(df_temp)
-        print(f"Documents avec mention du tabac : {nb_mentions} sur {total} ({(nb_mentions/total)*100:.1f}%)")
+        print(f"Documents avec mention du tabac (selon les mots-clés de la doc des M1) : {nb_mentions} sur {total} ({(nb_mentions/total)*100:.1f}%)")
         
         plt.figure(figsize=(6, 4))
         ax = sns.countplot(data=df_temp, x='mention_tabac', hue='mention_tabac', palette=['#ff9999', '#66b3ff'], legend=False)
