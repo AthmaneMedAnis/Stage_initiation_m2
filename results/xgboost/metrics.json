@@ -1,0 +1,86 @@
+{
+  "Modèle": "XGBoost (Opt. HPO + Seuils)",
+  "run_name": "xgboost",
+  "n_test_docs": 120,
+  "classes": [
+    "Ancien fumeur",
+    "Fumeur actuel",
+    "Non mentionné",
+    "Non-fumeur"
+  ],
+  "Accuracy": 0.8667,
+  "Precision (macro)": 0.8292,
+  "Recall (macro)": 0.8133,
+  "F1-score (macro)": 0.8151,
+  "kappa": 0.7952,
+  "per_class": {
+    "Ancien fumeur": {
+      "precision": 0.7,
+      "recall": 0.875,
+      "f1-score": 0.7778,
+      "support": 16.0
+    },
+    "Fumeur actuel": {
+      "precision": 0.7857,
+      "recall": 0.6111,
+      "f1-score": 0.6875,
+      "support": 18.0
+    },
+    "Non mentionné": {
+      "precision": 0.9219,
+      "recall": 0.9672,
+      "f1-score": 0.944,
+      "support": 61.0
+    },
+    "Non-fumeur": {
+      "precision": 0.9091,
+      "recall": 0.8,
+      "f1-score": 0.8511,
+      "support": 25.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      14,
+      0,
+      1,
+      1
+    ],
+    [
+      5,
+      11,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      59,
+      1
+    ],
+    [
+      1,
+      2,
+      2,
+      20
+    ]
+  ],
+  "best_cv_f1_macro": 0.8357,
+  "params": {
+    "n_estimators": 60,
+    "max_depth": 3,
+    "learning_rate": 0.08816543428033823,
+    "subsample": 0.9352411209564785,
+    "colsample_bytree": 0.6167697187079001,
+    "objective": "multi:softprob",
+    "eval_metric": "mlogloss",
+    "random_state": 42,
+    "n_jobs": 1
+  },
+  "threshold_weights": [
+    1.0,
+    0.5059191443376013,
+    0.9172358406980836,
+    0.48143368640834355
+  ]
+}

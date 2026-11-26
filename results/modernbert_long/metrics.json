@@ -1,0 +1,91 @@
+{
+  "Modèle": "ModernBERT long (mmBERT-base)",
+  "run_name": "modernbert_long",
+  "timestamp": "2026-11-25T23:12:52",
+  "n_test_docs": 120,
+  "classes": [
+    "Ancien fumeur",
+    "Fumeur actuel",
+    "Non mentionné",
+    "Non-fumeur"
+  ],
+  "Accuracy": 0.9333,
+  "Precision (macro)": 0.906,
+  "Recall (macro)": 0.9008,
+  "F1-score (macro)": 0.9001,
+  "kappa": 0.8983,
+  "per_class": {
+    "Ancien fumeur": {
+      "precision": 0.7895,
+      "recall": 0.9375,
+      "f1-score": 0.8571,
+      "support": 16.0
+    },
+    "Fumeur actuel": {
+      "precision": 0.8667,
+      "recall": 0.7222,
+      "f1-score": 0.7879,
+      "support": 18.0
+    },
+    "Non mentionné": {
+      "precision": 0.9677,
+      "recall": 0.9836,
+      "f1-score": 0.9756,
+      "support": 61.0
+    },
+    "Non-fumeur": {
+      "precision": 1.0,
+      "recall": 0.96,
+      "f1-score": 0.9796,
+      "support": 25.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      15,
+      1,
+      0,
+      0
+    ],
+    [
+      4,
+      13,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      60,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      24
+    ]
+  ],
+  "train_time_s": 877.6,
+  "inference_time_s": 6.97,
+  "inference_ms_per_doc": 58.1,
+  "preprocessing_test_s": 0.32,
+  "peak_vram_train_gb": 6.78,
+  "peak_vram_infer_gb": 2.35,
+  "best_val_f1_macro": 0.9059,
+  "max_len": 8192,
+  "n_truncated_docs_total": 2,
+  "config": {
+    "model": "jhu-clsp/mmBERT-base",
+    "max_len": 8192,
+    "epochs": 8,
+    "lr": 3e-05,
+    "train_bs": 2,
+    "grad_acc": 8,
+    "gradient_checkpointing": true,
+    "attn": "sdpa",
+    "seed": 42,
+    "test_size": 0.2,
+    "val_size": 0.15
+  }
+}

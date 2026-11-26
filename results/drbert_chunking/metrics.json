@@ -1,0 +1,90 @@
+{
+  "Modèle": "DrBERT chunking + fenêtres",
+  "run_name": "drbert_chunking",
+  "timestamp": "2026-11-26T09:15:55",
+  "n_test_docs": 120,
+  "classes": [
+    "Ancien fumeur",
+    "Fumeur actuel",
+    "Non mentionné",
+    "Non-fumeur"
+  ],
+  "Accuracy": 0.875,
+  "Precision (macro)": 0.8257,
+  "Recall (macro)": 0.8062,
+  "F1-score (macro)": 0.8148,
+  "kappa": 0.808,
+  "per_class": {
+    "Ancien fumeur": {
+      "precision": 0.8571,
+      "recall": 0.75,
+      "f1-score": 0.8,
+      "support": 16.0
+    },
+    "Fumeur actuel": {
+      "precision": 0.6471,
+      "recall": 0.6111,
+      "f1-score": 0.6286,
+      "support": 18.0
+    },
+    "Non mentionné": {
+      "precision": 0.9524,
+      "recall": 0.9836,
+      "f1-score": 0.9677,
+      "support": 61.0
+    },
+    "Non-fumeur": {
+      "precision": 0.8462,
+      "recall": 0.88,
+      "f1-score": 0.8627,
+      "support": 25.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      12,
+      4,
+      0,
+      0
+    ],
+    [
+      2,
+      11,
+      1,
+      4
+    ],
+    [
+      0,
+      1,
+      60,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      22
+    ]
+  ],
+  "train_time_s": 117.1,
+  "inference_time_s": 1.13,
+  "inference_ms_per_doc": 9.5,
+  "preprocessing_test_s": 0.89,
+  "peak_vram_train_gb": 3.53,
+  "peak_vram_infer_gb": 0.97,
+  "best_val_f1_macro": 0.8095,
+  "aggregation": "mean",
+  "n_test_sequences": 140,
+  "config": {
+    "model": "Dr-BERT/DrBERT-7GB",
+    "max_len": 512,
+    "ctx_tokens": 50,
+    "epochs": 8,
+    "lr": 2e-05,
+    "train_bs": 8,
+    "grad_acc": 2,
+    "seed": 42,
+    "test_size": 0.2,
+    "val_size": 0.15
+  }
+}
